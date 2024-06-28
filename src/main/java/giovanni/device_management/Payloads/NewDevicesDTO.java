@@ -16,5 +16,7 @@ public record NewDevicesDTO(
         @NotNull(message = "The state is mandatory data!")
         DevicesStateEnum state
 
+
+
 ) {
 }

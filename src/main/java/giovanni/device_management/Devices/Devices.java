@@ -29,3 +29,10 @@ public class Devices {
         this.type = type;
     }
 }
+/*
+* {
+ "type": "laptop",
+ "state": "ASSEGNATO"
+
+       }
+* */

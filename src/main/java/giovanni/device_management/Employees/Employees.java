@@ -38,3 +38,13 @@ public class Employees {
     }
 }
 
+/*
+*
+* {
+ "name": "{{$randomFirstName}}",
+ "surname": "{{$randomLastName}}",
+ "email": "{{$randomEmail}}",
+ "username":"{{$randomUserName}}"
+
+       }
+* */
