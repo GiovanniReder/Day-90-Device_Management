@@ -5,6 +5,6 @@ import java.util.UUID;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(long id) {
-        super("Record con id " + id + " non trovato!");
+        super("Employee with id " + id + " not found!");
     }
 }
