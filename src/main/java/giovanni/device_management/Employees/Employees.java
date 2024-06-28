@@ -26,7 +26,7 @@ public class Employees {
 
     private String email;
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Devices> devices;
 
 

@@ -23,4 +23,9 @@ public class Devices {
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
     private Employees employee;
+
+    public Devices( DevicesStateEnum state, String type) {
+        this.state = state;
+        this.type = type;
+    }
 }
