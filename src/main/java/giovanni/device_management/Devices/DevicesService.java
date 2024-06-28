@@ -1,9 +1,7 @@
 package giovanni.device_management.Devices;
 
-import giovanni.device_management.Employees.Employees;
+
 import giovanni.device_management.Payloads.NewDevicesDTO;
-import giovanni.device_management.Payloads.NewEmployeesDTO;
-import giovanni.device_management.exceptions.BadRequestException;
 import giovanni.device_management.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,6 +26,7 @@ public class DevicesService {
 
     public Devices saveNewDevice (NewDevicesDTO body) throws IOException {
         Devices newDevice = new Devices(body.state() , body.type());
+
         return devicesRepository.save(newDevice);
     }
 

@@ -2,6 +2,7 @@ package giovanni.device_management.Devices;
 
 import giovanni.device_management.Employees.Employees;
 import giovanni.device_management.Payloads.NewDevicesDTO;
+import giovanni.device_management.Payloads.NewDevicesResponseDTO;
 import giovanni.device_management.Payloads.NewEmployeesResponseDTO;
 import giovanni.device_management.exceptions.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +30,13 @@ public class DevicesController {
     // 2 . POST http://localhost:3001/devices
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public NewEmployeesResponseDTO saveDevice(@RequestBody @Validated NewDevicesDTO body, BindingResult validationResult) throws IOException {
+    public NewDevicesResponseDTO saveDevice(@RequestBody @Validated NewDevicesDTO body, BindingResult validationResult) throws IOException {
 
         if (validationResult.hasErrors()) {
             System.out.println(validationResult.getAllErrors());
             throw new BadRequestException(validationResult.getAllErrors());
         }
-        return new NewEmployeesResponseDTO(this.devicesService.saveNewDevice(body).getId());
+        return new NewDevicesResponseDTO(this.devicesService.saveNewDevice(body).getId());
     }
 
     // 3. GET http://localhost:3001/devices/{deviceId}
@@ -46,8 +47,8 @@ public class DevicesController {
 
     // 4. PUT http://localhost:3001/devices/{deviceId}
     @PutMapping("/{deviceId}")
-    public Devices findDeviceByIdAndUpdate(@PathVariable long employeeId, @RequestBody Devices body) {
-        return this.devicesService.findDeviceByIdAndUpdate(employeeId , body);
+    public Devices findDeviceByIdAndUpdate(@PathVariable long deviceId, @RequestBody Devices body) {
+        return this.devicesService.findDeviceByIdAndUpdate(deviceId , body);
     }
 
     // 5. DELETE http://localhost:3001/devices/{deviceId}

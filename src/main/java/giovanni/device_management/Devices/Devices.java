@@ -21,7 +21,7 @@ public class Devices {
     private DevicesStateEnum state;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id")
     private Employees employee;
 
     public Devices( DevicesStateEnum state, String type) {
